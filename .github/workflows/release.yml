@@ -1,6 +1,10 @@
 name: Test and Publish
 
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    paths:
+      - 'src/**'
 
 jobs:
   test:
@@ -25,6 +29,7 @@ jobs:
 
   publish:
     needs: test
+    if: github.event_name == 'push'  # Only run on push, not pull_request
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -42,4 +47,3 @@ jobs:
         python -m build
         twine check dist/*
         twine upload dist/*
-
