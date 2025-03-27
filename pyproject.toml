@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ldif2json"
+version = "1.0.8"
+authors = [
+    {name = "Jairsinho Ramirez Ruiz", email = "jairsinho@gmail.com"},
+]
+description = "A robust Python tool for converting LDAP Data Interchange Format (LDIF) files to JSON with support for hierarchical nesting and Base64 decoding."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration :: Authentication/Directory :: LDAP"
+]
+
+[project.urls]
+Homepage = "https://github.com/jairsinho/ldif2json"
+Documentation = "https://github.com/jairsinho/ldif2json#readme"
+BugTracker = "https://github.com/jairsinho/ldif2json/issues"
+
+[project.scripts]
+ldif2json = "ldif2json:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-v --cov=src --cov-report=term-missing"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0"
+]

@@ -1,0 +1,30 @@
+# Archivo .gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build and distribution directories
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+.coverage
+htmlcov/
